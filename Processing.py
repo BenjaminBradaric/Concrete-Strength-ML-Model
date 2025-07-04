@@ -4,11 +4,9 @@ import torch
 from torch import nn
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-import matplotlib.pyplot as plt
-import seaborn as sns 
 
 ## Fetching the csv file----------------------------------------------
-file_path = r"C:\Users\benny\Documents\Concrete\concrete_data.csv"
+file_path = r"MY_PATH"
 
 if os.path.exists(file_path):
     concrete_data = pd.read_csv(file_path)
@@ -50,8 +48,6 @@ features_test_set = feature_scaler.fit_transform(features_test_set.to_numpy())
 label_scaler = StandardScaler()
 labels_train_set = label_scaler.fit_transform(labels_train_set.to_numpy())
 labels_test_set = label_scaler.fit_transform(labels_test_set.to_numpy())
-
-
 
 
 features_training_set = torch.tensor(features_training_set, dtype= torch.float32)
